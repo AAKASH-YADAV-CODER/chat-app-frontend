@@ -1,5 +1,5 @@
 import Conversation from "./Conversation";
-import useUsers from "../../hooks/getUsers.js";
+import useUsers from "../../hooks/useGetUsers.js";
 import { getRandomEmoji } from "../../utilities/randomEmoji.jsx";
 const Conversations = () => {
 	const { isLoading, conversation } = useUsers();
