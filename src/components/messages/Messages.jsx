@@ -23,7 +23,7 @@ const Messages = () => {
 				))}
 			{isLoading && [...Array(5)].map((_, idx) => <MessageSkeleton key={idx} />)}
 			{!isLoading && messages.length === 0 && (
-				<p className='text-center text-white '>There's No Message Start Conversation 😃 </p>
+				<p className='text-center text-black dark:text-white '>There's No Message Start Conversation 😃 </p>
 			)}
 		</div>
 	);

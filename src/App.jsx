@@ -10,20 +10,24 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element:authUser ? <HomePage/> : <Navigate to='/login'/>
+      element: authUser ? <HomePage /> : <Navigate to='/login' />
     },
     {
       path: '/login',
-      element: authUser ? <Navigate to='/'/> : <LoginPage/>
+      element: authUser ? <Navigate to='/' /> : <LoginPage />
     },
     {
       path: '/signup',
-      element: authUser ? <Navigate to='/'/> : <SignupPage/>
+      element: authUser ? <Navigate to='/' /> : <SignupPage />
     }
   ])
+  // const backgroundImage = document.body.classList.contains('dark') ? '/bg.png' : '';
+
   return (
+    <div className='bg-cover bg-no-repeat dark:bg-dark-image min-h-screen'>
       <RouterProvider router={router} />
+    </div>
   )
-}
+};
 
 export default App

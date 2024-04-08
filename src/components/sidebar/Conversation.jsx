@@ -11,7 +11,7 @@ const Conversation = ({ conversation, emoji, lastIdx }) => {
 
 	return (
 		<>
-			<div className={`${isSelected?'bg-sky-500':''} flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer`}
+			<div className={`${isSelected?'bg-sky-500':''} flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer text-black dark:text-white`}
 			onClick={()=>dispatch(setSelectConversation(conversation))}
 			>
 				<div className={`avatar ${isOnline ? "online" : ""}`}>
@@ -25,7 +25,7 @@ const Conversation = ({ conversation, emoji, lastIdx }) => {
 
 				<div className='flex flex-col flex-1'>
 					<div className='flex gap-3 justify-between'>
-						<p className='font-bold text-gray-200'>{conversation.fullName}</p>
+						<p className='font-bold text-black dark:text-white'>{conversation.fullName}</p>
 						<span className='text-xl'>{emoji}</span>
 					</div>
 				</div>
