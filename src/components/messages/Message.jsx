@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { extractTime } from "../../utilities/formatedTime.jsx";
-import { useAuthContext } from "../../context/authContext";
+import { useAuthContext } from "../../context/AuthContext.jsx";
 const Message = ({message}) => {
 	const { authUser } = useAuthContext();
 	const { selectConversation } = useSelector((store => store.chat));

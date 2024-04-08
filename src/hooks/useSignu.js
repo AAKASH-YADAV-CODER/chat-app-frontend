@@ -2,11 +2,9 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../store/ui-slice.jsx";
 import toast from "react-hot-toast";
 import axios from "axios";
-// import { useNavigate } from 'react-router-dom';
-import { useAuthContext } from "../context/authContext.jsx";
+import { useAuthContext } from "../context/AuthContext.jsx";
 const useSignup = () => {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
   const { setAuthUser } = useAuthContext();
   const signup = async ({
     fullName,

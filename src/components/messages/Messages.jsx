@@ -3,7 +3,9 @@ import useGetMessage from "../../hooks/useGetMessage.js";
 import MessageSkeleton from "../skeletons/MessageSkeleton.jsx";
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
+import useListenMessages from "../../hooks/useListenMessages.js";
 const Messages = () => {
+	useListenMessages();
 	const lastMessageRef = useRef();
 	const { isLoading } = useGetMessage();
 	const { messages } = useSelector((store) => store.chat);

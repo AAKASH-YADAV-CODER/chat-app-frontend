@@ -16,9 +16,7 @@ const useGetMessage = () => {
         const { data } = await axios.get(
           `/api/v1/message/${selectConversation._id}`
         );
-        // const data = response.data;
         if (data.error) throw new Error(data.error);
-        // console.log(data);
         dispatch(setMessage(data));
       } catch (error) {
         console.error(error.message);

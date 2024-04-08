@@ -2,7 +2,7 @@ import MessageInput from "./MessageInput";
 import Messages from "./Messages.jsx";
 import { useSelector,useDispatch } from 'react-redux';
 import { TiMessages } from "react-icons/ti";
-import { useAuthContext } from '../../context/authContext.jsx'
+import { useAuthContext } from '../../context/AuthContext.jsx'
 import { setSelectConversation } from "../../store/chat-slice.jsx";
 import { useEffect } from "react";
 const MessageContainer = () => {

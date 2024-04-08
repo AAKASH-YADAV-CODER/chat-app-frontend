@@ -23,7 +23,6 @@ const useSendMessage = () => {
         }
       );
       if (res.data.error) throw new Error(res.data.error);
-      console.log(res.data);
       dispatch(setMessage([...messages, res.data]));
     } catch (error) {
       console.error(error.message);

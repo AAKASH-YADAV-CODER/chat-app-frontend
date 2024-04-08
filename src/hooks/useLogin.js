@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../store/ui-slice";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { useAuthContext } from "../context/authContext";
+import { useAuthContext } from "../context/AuthContext.jsx";
 const useLogin = () => {
   const dispatch = useDispatch();
   const { setAuthUser } = useAuthContext();

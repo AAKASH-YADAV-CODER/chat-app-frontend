@@ -1,17 +1,10 @@
 import { useState,useEffect } from "react";
 import { BsSend } from "react-icons/bs";
-// import { useSelector} from "react-redux";
 
 import useSendMessage from "../../hooks/useSendMessage";
 const MessageInput = () => {
 	const [message, setMsg] = useState('');
 	const { isLoading, sendMessage } = useSendMessage();
-	// const { messages } = useSelector((store) => store.chat);
-	
-// 	useEffect(() => {
-//     console.log(messages);
-//   }, [messages]);
-
 	const submitHandler = async (e) => {
 		e.preventDefault();
 		if (!message) return;

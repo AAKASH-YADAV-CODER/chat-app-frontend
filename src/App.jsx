@@ -4,7 +4,7 @@ import SignupPage from './pages/signup.jsx';
 import LoginPage from './pages/login.jsx';
 import HomePage from './pages/home.jsx';
 
-import { useAuthContext } from './context/authContext.jsx';
+import { useAuthContext } from './context/AuthContext.jsx';
 const App = () => {
   const { authUser } = useAuthContext();
   const router = createBrowserRouter([
