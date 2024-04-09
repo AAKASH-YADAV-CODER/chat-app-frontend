@@ -2,10 +2,12 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../store/ui-slice.jsx";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { useAuthContext } from "../context/AuthContext.jsx";
+// import { useAuthContext } from "../context/AuthContext.jsx";
+import { useNavigate } from "react-router-dom";
 const useSignup = () => {
   const dispatch = useDispatch();
-  const { setAuthUser } = useAuthContext();
+  // const { setAuthUser } = useAuthContext();
+  const navigate = useNavigate();
   const signup = async ({
     fullName,
     userName,
@@ -36,10 +38,10 @@ const useSignup = () => {
       if (data.error) {
         throw new Error(data.error);
       }
-      localStorage.setItem("chat", JSON.stringify(data));
-      setAuthUser(data);
+      // localStorage.setItem("chat", JSON.stringify(data));
+      // setAuthUser(data);
       toast.success(data.message);
-      // navigate('/');
+      navigate("/login");
     } catch (error) {
       console.error(error.message);
       toast.error(error.message);

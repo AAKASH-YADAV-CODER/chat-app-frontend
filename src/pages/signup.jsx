@@ -3,9 +3,11 @@ import useSignup from "../hooks/useSignu.js";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ThemeModel from "../components/skeletons/ThemeModel.jsx";
+// import { useNavigate } from "react-router-dom";
 const SignUp = () => {
     const [input, setInput] = useState({ fullName: '', email: '', userName: '', password: '', confirmPassword: '', gender: '' });
     const { isLoading } = useSelector(store => store.ui);
+    // const navigate = useNavigate();
 
     const checkboxHandler = (gender) => {
         setInput({ ...input, gender });
@@ -16,6 +18,7 @@ const SignUp = () => {
         await signup(input);
         // console.log(input);
         setInput({ fullName: '', email: '', userName: '', password: '', confirmPassword: '', gender: '' })
+        // navigate('/login');
     }
     return (
         <div className="flex items-center justify-center  overflow-auto">
@@ -36,7 +39,7 @@ const SignUp = () => {
                             <label className='label p-2'>
                                 <span className=''>Full Name</span>
                             </label>
-                            <input type='text' placeholder='Enter Full Name' className='w-full input input-bordered  h-10 dark:bg-slate-300 dark:text-black text-white'
+                            <input type='text' placeholder='Enter Full Name' className='w-full input input-bordered  h-10 dark:bg-slate-300 dark:text-black text-white  bg-black'
                             value={input.fullName}
                             onChange={(e)=>setInput({...input,fullName:e.target.value})}
                             />
@@ -46,7 +49,7 @@ const SignUp = () => {
                             <label className='label p-2'>
                                 <span className=''>email</span>
                             </label>
-                            <input type='text' placeholder='Enter your email' className='w-full input input-bordered  h-10 dark:bg-slate-300 dark:text-black text-white'
+                            <input type='text' placeholder='Enter your email' className='w-full input input-bordered  h-10 dark:bg-slate-300 dark:text-black text-white bg-black'
                             value={input.email}
                             onChange={(e)=>setInput({...input,email:e.target.value})}/>
                         </div>
@@ -55,7 +58,7 @@ const SignUp = () => {
                             <label className='label p-2 '>
                                 <span className=''>Username</span>
                             </label>
-                            <input type='text' placeholder='Enter User Name' className='w-full input input-bordered h-10 dark:bg-slate-300 dark:text-black text-white'
+                            <input type='text' placeholder='Enter User Name' className='w-full input input-bordered h-10 bg-black dark:bg-slate-300 dark:text-black text-white'
                             value={input.userName}
                             onChange={(e)=>setInput({...input,userName:e.target.value})}
                             />
@@ -68,7 +71,7 @@ const SignUp = () => {
                             <input
                                 type='password'
                                 placeholder='Enter Password'
-                                className='w-full input input-bordered h-10 dark:bg-slate-300 dark:text-black text-white'
+                                className='w-full input input-bordered h-10 dark:bg-slate-300 dark:text-black text-white bg-black'
                                 value={input.password}
                             onChange={(e)=>setInput({...input,password:e.target.value})}
                             />
@@ -81,7 +84,7 @@ const SignUp = () => {
                             <input
                                 type='password'
                                 placeholder='Confirm Password'
-                                className='w-full input input-bordered h-10 dark:bg-slate-300 dark:text-black text-white'
+                                className='w-full input input-bordered h-10 dark:bg-slate-300 dark:text-black text-white bg-black'
                                 value={input.confirmPassword}
                                 onChange={(e)=>setInput({...input,confirmPassword:e.target.value})}
                             />
@@ -95,7 +98,7 @@ const SignUp = () => {
 
                         <div className="flex justify-center items-center">
                             {
-                                isLoading ? <span className="loading loading-spinner"/> :<button className='btn btn-block btn-sm mt-2 dark:bg-slate-300 dark:text-black border border-slate-700' disabled={isLoading}>Sign Up</button>
+                                isLoading ? <span className="loading loading-spinner"/> :<button className='btn btn-block btn-sm mt-2 dark:bg-slate-300 dark:text-black border border-slate-700 bg-black text-white' disabled={isLoading}>Sign Up</button>
                             }
                             
                         </div>

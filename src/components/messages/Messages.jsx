@@ -5,10 +5,10 @@ import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import useListenMessages from "../../hooks/useListenMessages.js";
 const Messages = () => {
-	useListenMessages();
 	const lastMessageRef = useRef();
 	const { isLoading } = useGetMessage();
 	const { messages } = useSelector((store) => store.chat);
+	useListenMessages();
 	useEffect(() => {
 		setTimeout(() => {
 			lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' })

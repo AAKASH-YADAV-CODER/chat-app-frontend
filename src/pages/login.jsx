@@ -31,7 +31,7 @@ const Login = () => {
                             <label className='label p-2'>
                                 <span className=''>Email</span>
                             </label>
-                            <input type='text' placeholder='Enter Email' className='w-full input input-bordered h-10 dark:bg-gray-300 dark:text-black text-white'
+                            <input type='text' placeholder='Enter Email' className='w-full input input-bordered h-10 dark:bg-gray-300 dark:text-black text-white bg-black'
                                 value={inputs.email}
                                 onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
                             />
@@ -44,7 +44,7 @@ const Login = () => {
                             <input
                                 type='password'
                                 placeholder='Enter Password'
-                                className='w-full input input-bordered h-10 dark:bg-slate-300 dark:text-black text-white'
+                                className='w-full input input-bordered h-10 dark:bg-slate-300 dark:text-black  text-white bg-black'
                                 value={inputs.password}
                                 onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
                             />
@@ -55,7 +55,7 @@ const Login = () => {
 
                         <div className="flex justify-center items-center">
                             {
-                                isLoading ? <span className="loading loading-spinner" /> : <button className={`btn btn-block btn-sm mt-2 dark:bg-slate-300 dark:text-black`} disabled={isLoading}>Login</button>
+                                isLoading ? <span className="loading loading-spinner" /> : <button className={`btn btn-block btn-sm mt-2 dark:bg-slate-300 dark:text-black text-white bg-black`} disabled={isLoading}>Login</button>
                             }
                             
                         </div>
